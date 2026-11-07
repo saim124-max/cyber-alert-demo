@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Security Simulator</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #020604;
+  color: #00ff75;
+  font-family: Consolas, monospace;
+  min-height: 100vh;
+  padding: 25px;
+}
+
+.terminal {
+  max-width: 850px;
+  margin: 35px auto;
+  border: 1px solid #00ff75;
+  padding: 25px;
+  background: rgba(0, 15, 7, .95);
+  box-shadow: 0 0 25px #003d1d;
+}
+
+h1 {
+  color: #ff3333;
+  text-align: center;
+  text-shadow: 0 0 12px red;
+}
+
+.subtitle {
+  text-align: center;
+  color: #00ff75;
+}
+
+.line {
+  border-bottom: 1px solid #14552d;
+  padding: 12px 0;
+}
+
+.warning {
+  color: #ff3333;
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: .35; }
+}
+
+button {
+  background: #00ff75;
+  color: black;
+  border: none;
+  padding: 13px 20px;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#output {
+  line-height: 2;
+  min-height: 150px;
+}
+
+.alert {
+  border: 1px solid red;
+  padding: 15px;
+  margin-top: 20px;
+  color: #ff4545;
+  display: none;
+}
+
+.footer {
+  color: #7eaa8c;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="terminal">
+
+<h1>⚠ CYBER DEFENSE SYSTEM ⚠</h1>
+
+<p class="subtitle">
+[ ADVANCED NETWORK SECURITY SIMULATOR ]
+</p>
+
+<div class="line">SYSTEM STATUS: ONLINE</div>
+<div class="line">SECURITY MODE: DEMONSTRATION</div>
+<div class="line">NETWORK: SIMULATED</div>
+
+<div id="output">
+Awaiting user command...
+</div>
+
+<button onclick="startScan()">
+INITIALIZE SECURITY SCAN
+</button>
+
+<div class="alert" id="alert">
+<h2>⚠ SECURITY ALERT ⚠</h2>
+<p>SIMULATED THREAT DETECTED</p>
+<p>WhatsApp traffic interception attempt (DEMO)</p>
+<p>Real network traffic has NOT been accessed.</p>
+</div>
+
+<div class="footer">
+EDUCATIONAL CYBERSECURITY DEMO — NO REAL ATTACK
+</div>
+
+</div>
+
+<script>
+function startScan() {
+
+const output = document.getElementById("output");
+const alertBox = document.getElementById("alert");
+
+alertBox.style.display = "none";
+
+const messages = [
+"> Initializing security simulator...",
+"> Checking simulated network status...",
+"> Analyzing demonstration traffic...",
+"> Running security checks...",
+"> Generating simulated threat report...",
+"> Scan completed."
+];
+
+output.innerHTML = "";
+let i = 0;
+
+const timer = setInterval(() => {
+
+output.innerHTML +=
+"<div>" + messages[i] + "</div>";
+
+i++;
+
+if (i >= messages.length) {
+clearInterval(timer);
+alertBox.style.display = "block";
+}
+
+}, 900);
+}
+</script>
+
+</body>
+</html>
